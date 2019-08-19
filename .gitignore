@@ -1,0 +1,6 @@
+*.mat
+*.pdf
+*.png
+*.tex
+*.html
+.vscode/
