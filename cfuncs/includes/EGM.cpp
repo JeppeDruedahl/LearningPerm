@@ -90,7 +90,7 @@ void all(size_t t, par_struct *par, sol_struct *sol){
             
             // ii. constraint
             size_t i_a = 0;
-            while(isnan(sol->Q_vec[i_a])){
+            while(std::isnan(sol->Q_vec[i_a])){
                 i_a++;
             }
             size_t i_m = 0;
@@ -220,7 +220,7 @@ void EGM(sol_struct *sol){
     for(size_t i_a = 0; i_a < par->Na; i_a++){
 
         // a. invert Euler-equation and endogenous m
-        if(isnan(Q_vec[i_a])){
+        if(std::isnan(Q_vec[i_a])){
             c_vec[i_a] = 0;
         } else {
             c_vec[i_a] = utilities::inv_marg_u(Q_vec[i_a],par);            
