@@ -10,7 +10,6 @@ par = model.setup();
 for group = [0 1 2] % 0: whole sample, 1: no college, 2: college %  1 2
 for commault = [0]
 for year = [0]
-for nologC = [0 1]
     
     % a. initialize random number generator
     rng(par.seed);
@@ -21,12 +20,6 @@ for nologC = [0 1]
     par.select_year = year;    
     par.do_full_output = 1;
     par.Nbootstraps = 5000;
-    if nologC == 1
-        par.targets = {'mean_logY',...
-                       'yy','yy_lead1','yy_lead2','yy_lead3','yy_lead4','yy_lead5',...
-                       'cc','cc_lead1','cc_lead2','cc_lead3','cc_lead4','cc_lead5',...
-                       'cy_lag2','cy_lag1','cy','cy_lead1','cy_lead2','cy_lead3','cy_lead4','cy_lead5'};                 
-    end
     data = datafuns.load(par);
    
         % save state of random number generator
@@ -50,9 +43,6 @@ for nologC = [0 1]
     end
     if year ~= 0
         filename = sprintf('%s_%d',filename,year);
-    end
-    if nologC == 1
-        filename = sprintf('%s_%s',filename,'nologC');        
     end
     save(filename,'data','-v7.3')
     
@@ -94,8 +84,7 @@ for nologC = [0 1]
     
     fprintf('%18s: %7d\n','observations',sum(isnan(data.logdiffs.DlogY(:)) == 0));
     fprintf('\n');
-    
-end
+   
 end
 end
 end

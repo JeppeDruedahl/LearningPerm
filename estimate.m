@@ -149,17 +149,11 @@ function [] = run_and_analyze(namebase,postfix,parnames,vals,do_analyze,do_profi
     par.zeta = [par.zeta(1)*ones(par.TR,1);zeros(par.T-par.TR,1)];
     
     % c. load data 
-    if ~isfield(par,'load_bootstrap')
-        filename = 'data/data';        
-        if par.group ~= 0
-            filename = sprintf('%s_%d',filename,par.group);            
-        end
-        load(filename,'data');          
-    else
-        filename = sprintf('data/bootstrap/data_%d',par.load_bootstrap);
-        load(filename,'data_bs');
-        data = data_bs;
+    filename = 'data/data';        
+    if par.group ~= 0
+        filename = sprintf('%s_%d',filename,par.group);            
     end
+    load(filename,'data');          
 
     % d. estimate
     if LOAD == 0
@@ -190,11 +184,7 @@ function [] = run_and_analyze(namebase,postfix,parnames,vals,do_analyze,do_profi
         
     end
     
-    if ~isfield(par,'load_bootstrap')
-        filename = sprintf('data/%s',name);
-    else
-        filename = sprintf('data/bootstrap/%s_%d.mat',name,par.load_bootstrap);        
-    end      
+    filename = sprintf('data/%s',name);
     if LOAD == 1
         load(filename,'par')
         rng(data.rng_state);    
@@ -241,10 +231,8 @@ function [] = run_and_analyze(namebase,postfix,parnames,vals,do_analyze,do_profi
     fprintf('%12s: %7.4f\n','obj',par.obj);
     
     % g. fit figures
-    if ~isfield(par,'load_bootstrap')    
-        par.figfolder = name;
-        model.fit_plots(par,sol,sim_data,data,'')
-    end
+    par.figfolder = name;
+    model.fit_plots(par,sol,sim_data,data,'')
     
     % h. analysis figures
     if do_analyze
