@@ -13,10 +13,6 @@ The code was run and tested with "MATLAB 2018b" and "Intel Parallel Studio XE 20
 
 **Alternative C++ compiler:** You can alternatively install the "MinGW GCC" C++ compiler extension to MATLAB. Set `intel = 0` in `run_00_all.m`. If you use another MATLAB version change the path to `libgomp.a` in `compile_mex.m` accordingly. 
 
-**Computation time:** The computation time of all results in the paper was around 10 days and 12 hours, using 56 threads. Much of this time is spent generating the Monte Carlo section of the paper. 
-
-We have included a switch, `DO_SMALL`, in the main Matlab file `run_00_all.m` where switching it to `1` (default is `0`) will reduce the number of MC runs from 200 (baseline, as in the paper) to 5. 
-In turn, the baseline code with `DO_SMALL = 0` will reproduce the results in the paper but will take significant time to complete. Changing `DO_SMALL = 1` will run much faster (around INSERT) but will not reproduce the MC results in the paper.  
 
 ## ReadMe
 
@@ -24,6 +20,11 @@ Everything can be run from `run_00_all.m`. It calls all the `run_*.m` files in t
 
 1. **Input:** PSID data in `psid/*.txt`.
 2. **Output:** All figures and tables are saved in `fig_tabs/`.
+
+**Computation time:** The computation time of all results in the paper was around 10 days and 12 hours, using 56 threads. Much of this time is spent generating the Monte Carlo section of the paper. 
+
+We have included a switch, `DO_SMALL`, in the main Matlab file `run_00_all.m` where switching it to `1` (default is `0`) will reduce the number of MC runs from 200 (baseline, as in the paper) to 5. 
+In turn, the baseline code with `DO_SMALL = 0` will reproduce the results in the paper but will take significant time to complete. Changing `DO_SMALL = 1` will run much faster (around INSERT) but will not reproduce the MC results in the paper.  
 
 ## PSID data
 
