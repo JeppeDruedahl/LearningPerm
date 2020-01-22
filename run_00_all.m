@@ -9,9 +9,9 @@ compile_mex('mex_calc_logdiffs',threads,0,intel);
 compile_mex('mex_calc_covs',threads,0,intel);
 
 % time at start
-file = fopen('timings.txt','w');
+file = fopen('timings_start.txt','w');
 fprintf(file,'started at %s \n',datestr(datetime('now')));
-
+fclose(file);
 %% scripts
 
 run_01_data
@@ -32,5 +32,6 @@ run_07_tables
 run_08_Commault
 
 % time at end
+file = fopen('timings_end.txt','w');
 fprintf(file,'ended at %s \n',datestr(datetime('now')));
 fclose(file);
