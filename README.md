@@ -24,7 +24,7 @@ Everything can be run from `run_00_all.m`. It calls all the `run_*.m` files in t
 **Computation time:** The computation time of all results in the paper was around 10 days and 12 hours, using 56 threads. Most of this time is spent generating the Monte Carlo section of the paper. 
 
 We have included a switch, `DO_SMALL`, in the main Matlab file `run_00_all.m` where switching it to `1` (default is `0`) will reduce the number of MC runs from 200 (baseline, as in the paper) to 5. 
-In turn, the baseline code with `DO_SMALL = 0` will reproduce the results in the paper but will take significant time to complete. Changing `DO_SMALL = 1` will run much faster (around INSERT) but will not reproduce the MC results in the paper.  
+In turn, the baseline code with `DO_SMALL = 0` will reproduce the results in the paper but will take significant time to complete. Changing `DO_SMALL = 1` will run much faster (around 19 hours) but will not reproduce the MC results in the paper.  
 
 ## PSID data
 
