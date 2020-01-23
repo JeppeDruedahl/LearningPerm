@@ -21,10 +21,20 @@ Everything can be run from `run_00_all.m`. It calls all the `run_*.m` files in t
 1. **Input:** PSID data in `psid/*.txt`.
 2. **Output:** All figures and tables are saved in `fig_tabs/`.
 
+## Reproduction
 **Computation time:** The computation time of all results in the paper was around 10 days and 12 hours, using 56 threads. Most of this time is spent generating the Monte Carlo section of the paper. 
 
 We have included a switch, `DO_SMALL`, in the main Matlab file `run_00_all.m` where switching it to `1` (default is `0`) will reduce the number of MC runs from 200 (baseline, as in the paper) to 5. 
 In turn, the baseline code with `DO_SMALL = 0` will reproduce the results in the paper but will take significant time to complete. Changing `DO_SMALL = 1` will run much faster (around 19 hours) but will not reproduce the MC results in the paper.  
+
+**Mapping between folders and results in the paper:** All results are placed in the "figs_tab" folder which included a set of sub-folder. Here is the list of figures and tables from the main text:
+1. Figure 1 and 2 is in the folder "full_MC"
+2. Figure 3 is in the folder "full"
+3. Figure 4 is in the folder "sigma_eps_full"
+4. Figure 5 is in the folders "full_pref" (panels a and b) and "beta_full" (panels c and d)
+5. Table 2 is "ceq.tex"
+6. Table 3 is "main.tex"
+7. Table 4 is "robustness_full.txt"
 
 ## PSID data
 
