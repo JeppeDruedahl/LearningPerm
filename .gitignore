@@ -4,3 +4,5 @@
 *.tex
 *.html
 .vscode/
+profiling/
+timings*.txt

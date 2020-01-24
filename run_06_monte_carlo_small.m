@@ -28,7 +28,7 @@ truepar.omega       = 0.15;
 
 modelname = 'full';
 name = 'full';
-N_MC = 5; % We only run 5 runs here because this code illustrates the setup but does NOT reproduce the results in the paper.
+N_MC = 5; % we only run 5 runs here because this code illustrates the setup but does NOT reproduce the results in the paper
 
 MC(modelname,name,N_MC,truepar,LOAD)
 %close all;

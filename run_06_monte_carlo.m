@@ -40,7 +40,6 @@ truepar = par;
 
 modelname = 'pers';
 name = 'pers_zero';
-N_MC = 200;
 MC(modelname,name,N_MC,truepar,LOAD_PERS_ZERO)
 close all;
 
